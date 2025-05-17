@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elo IMREA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@100&family=Courgette&family=Gloria+Hallelujah&family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header> 
+      <div id="cabecalho">
+        <a href="#" class="abrirmenu" onclick="abrir();"> &equiv; </a>
+
+        <div id="superior">
+         <div id="imagem">
+            <img src="img/Elo-Logotipo.png" alt="logotipo-do-elo-imrea" />
+          </div>
+
+          <nav>
+            <a href="#" class="fecharmenu" onclick="fechar();"> &times; </a>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="agendas.html">Agendas</a></li>
+              <li><a href="quemsomos.html">Quem somos</a></li>
+              <li><a href="tutorial.html">Tutorial</a></li>
+              <li><a href="contato.html">Info e contato</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+     
+    </main>
+    <footer>
+      <div id="direitos">
+        <h3>ELO IMREA</h3>
+        <p>&copy; 2025 Elo IMREA. Todos direitos reservados.</p>
+      </div>
+
+      <div id="redes">
+        <nav>
+          <ul>
+            <li>
+              <a
+                href="https://github.com/3BugBuddies/Projeto-Elo-IMREA-"
+                target="_blank"
+                ><img src="img/icon-github-logo.svg" alt="logotipo-do-github"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com" target="_blank"
+                ><img src="img/youtube.svg" alt="facebook"
+              /></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      function abrir() {
+        document.getElementsByTagName("nav")[0].style.left = "0px";
+      }
+
+      function fechar() {
+        document.getElementsByTagName("nav")[0].style.left = "-210px";
+      }
+    </script>
+  </body>
+</html>

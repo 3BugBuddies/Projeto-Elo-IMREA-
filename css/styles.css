@@ -1,0 +1,293 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.abrirmenu {
+    text-decoration: none;
+    background-color: black;
+    border: 1px solid rgb(30, 30, 30);
+    padding: 10px;
+    color: white;
+    font-size: 20pt;
+    display: none;
+}
+
+.fecharmenu {
+    text-decoration: none;
+    color: white;
+    font-size: 20pt;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: #EA5C2F;
+    display: none
+}
+
+
+header {
+    height: 100px;
+    background-size: 100%;
+    background-color: #F5F8FF;
+    color: #240046;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    justify-content: space-around;
+}
+
+#cabecalho {
+    background-color: #F5F8FF;
+    height: 20px;
+    color: #240046;
+}
+
+
+#superior {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+h1 {
+    flex: 1;
+    padding-top: 30px;
+    font-family: "lato";
+    font-size: 20pt;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#imagem {
+    display: flex;
+    width: 80px;
+    height: 80px;
+    margin-left: 1rem;
+}
+
+#superior nav {
+    flex: 2;
+    text-align: center;
+    padding-top: 25px;
+}
+
+#superior nav ul {
+    list-style: none;
+}
+
+
+#superior nav ul li {
+    display: inline-block;
+    padding: 10px 10px;
+    transition: ease 0.5s;
+}
+
+#superior nav ul li:hover {
+    background-color: magenta;
+    /* transform: scale(1.5); */
+}
+
+
+#superior nav ul li a {
+    text-decoration: none;
+    color: #240046;
+    font-family: "lato";
+    font-size: 14pt;
+    text-transform: uppercase;
+
+}
+
+#cabecalho h2 {
+    text-align: center;
+    padding-top: 150px;
+    font-family: "lato";
+    font-size: 40pt;
+    margin: 30px;
+    letter-spacing: 5px;
+    word-spacing: 2px;
+}
+
+
+#cabecalho p {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: arial;
+}
+
+#cabecalho p:hover {
+    color: magenta;
+}
+
+
+/* ========================  estilos do footer ======================= */
+footer {
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+footer #direitos {
+    flex: 1;
+    color: #240046;
+    font-family: "lato";
+    font-size: 10pt;
+}
+
+footer #redes {
+    flex: 1;
+}
+
+footer #redes nav {
+    text-align: right;
+}
+
+footer #redes nav ul {
+    list-style: none;
+}
+
+footer #redes nav ul li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+footer #redes nav ul li a img {
+    width: 32px;
+    height: 32px;
+}
+
+
+/* =============== Área dos breakpoints de responsividade ==================== */
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 0px) and (max-width:800px) {
+    header {
+        background-position: 0px 0px;
+        background-repeat: no-repeat;
+    }
+
+    #superior nav {
+        background-color: #F5F8FF !important;
+        position: fixed;
+        left: -210px;
+        top: 0px;
+        z-index: 10000;
+        width: 200px;
+        height: 100vh;
+        text-align: left;
+        padding-top: 100px;
+        padding-left: 20px;
+        transition: ease 0.5s;
+    }
+
+    #superior nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-family: "lato";
+        font-size: 50pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        z-index: 10000;
+    }
+
+    #imagem {
+        display: flex;
+        width: 200px;
+        height: 200px;
+        top: -40px;
+        left: 40px;
+        z-index: 10000;
+        position: absolute;
+    }
+
+    .abrirmenu {
+        display: block;
+        width: 40px;
+    }
+
+    .fecharmenu {
+        display: block;
+        width: 30px;
+        height: 30px;
+        font-size: 20pt;
+        padding: 0px;
+        text-align: center;
+        position: absolute;
+        top: 0px;
+        left: 170px;
+        border-radius: 0;
+    }
+
+    /* //-----------FOOTER------------------- */
+    footer {
+        background-color: #f7f7f7;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        padding-bottom: none !important;
+    }
+
+    footer #direitos {
+        flex: 1;
+        color: #240046;
+        font-family: "lato";
+        font-size: 10pt;
+        text-align: center;
+    }
+
+    footer #redes {
+        flex: 1;
+    }
+
+    footer #redes nav {
+        text-align: right;
+    }
+
+    footer #redes nav ul {
+        list-style: none;
+    }
+
+    footer #redes nav ul li {
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+    footer #redes nav ul li a img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    #imagem {
+        display: flex;
+        width: 200px;
+        height: 200px;
+        top: -40px;
+        left: 40px;
+        z-index: 10000;
+        position: absolute;
+    }
+}
+
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {}
