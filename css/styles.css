@@ -1,3 +1,21 @@
+:root {
+    --primary-color: #3b82f6;
+    --primary-dark: #2563eb;
+    --success-color: #10b981;
+    --error-color: #ef4444;
+    --text-color: #240046;
+    --text-light: #6b7280;
+    --text-orange: #EA5C2F;
+    --text-red: #E31E46;
+    --border-color: #e5e7eb;
+    --background-color: #f3f4f6;
+    --background-dark-blue: #240046;
+    --white: #ffffff;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+
 html {
     scroll-behavior: smooth;
 }
@@ -11,21 +29,20 @@ html {
 
 .abrirmenu {
     text-decoration: none;
-    background-color: black;
-    border: 1px solid rgb(30, 30, 30);
+    background-color: #F5F8FF;
     padding: 10px;
-    color: white;
-    font-size: 20pt;
+    color: var(--text-color);
+    font-size: 10pt;
+    font-weight: bold;
     display: none;
 }
 
 .fecharmenu {
     text-decoration: none;
-    color: white;
     font-size: 20pt;
-    padding: 5px;
+    padding: 10px;
     border-radius: 50%;
-    background-color: #EA5C2F;
+    color: var(--text-orange);
     display: none
 }
 
@@ -37,6 +54,9 @@ header {
     color: #240046;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
     justify-content: space-around;
 }
 
@@ -64,9 +84,13 @@ h1 {
 
 #imagem {
     display: flex;
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
     margin-left: 1rem;
+    z-index: 10000;
+    position: absolute;
+    left: 0px;
+    top: -20px;
 }
 
 #superior nav {
@@ -164,18 +188,61 @@ footer #redes nav ul li a img {
 }
 
 
+
+
+/* //-----------FOOTER------------------- */
+footer {
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-bottom: none !important;
+}
+
+footer #direitos {
+    flex: 1;
+    color: #240046;
+    font-family: "lato";
+    font-size: 10pt;
+    text-align: center;
+}
+
+footer #redes {
+    flex: 1;
+}
+
+footer #redes nav {
+    text-align: right;
+}
+
+footer #redes nav ul {
+    list-style: none;
+}
+
+footer #redes nav ul li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+footer #redes nav ul li a img {
+    width: 32px;
+    height: 32px;
+}
+
+
 /* =============== Área dos breakpoints de responsividade ==================== */
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 0px) and (max-width:800px) {
+@media (min-width: 0px) and (max-width: 576px) {
     header {
         background-position: 0px 0px;
         background-repeat: no-repeat;
     }
 
     #superior nav {
-        background-color: #F5F8FF !important;
+        background-color: var(--background-dark-blue);
         position: fixed;
-        left: -210px;
+        right: -210px;
+        /* Alterado para o lado direito */
         top: 0px;
         z-index: 10000;
         width: 200px;
@@ -191,6 +258,13 @@ footer #redes nav ul li a img {
         margin-bottom: 10px;
     }
 
+    #superior nav ul li a {
+        color: var(--white);
+        font-size: 14pt;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
     h1 {
         font-family: "lato";
         font-size: 50pt;
@@ -204,7 +278,7 @@ footer #redes nav ul li a img {
         width: 200px;
         height: 200px;
         top: -40px;
-        left: 40px;
+        left: -20px;
         z-index: 10000;
         position: absolute;
     }
@@ -212,6 +286,12 @@ footer #redes nav ul li a img {
     .abrirmenu {
         display: block;
         width: 40px;
+        font-size: 30pt;
+        font-weight: bold;
+        position: fixed;
+        right: 40px;
+        top: 0px;
+        z-index: 1000;
     }
 
     .fecharmenu {
@@ -219,67 +299,96 @@ footer #redes nav ul li a img {
         width: 30px;
         height: 30px;
         font-size: 20pt;
-        padding: 0px;
+        font-weight: bold;
+        padding: 10px;
         text-align: center;
         position: absolute;
         top: 0px;
-        left: 170px;
-        border-radius: 0;
-    }
-
-    /* //-----------FOOTER------------------- */
-    footer {
-        background-color: #f7f7f7;
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        padding-bottom: none !important;
-    }
-
-    footer #direitos {
-        flex: 1;
-        color: #240046;
-        font-family: "lato";
-        font-size: 10pt;
-        text-align: center;
-    }
-
-    footer #redes {
-        flex: 1;
-    }
-
-    footer #redes nav {
-        text-align: right;
-    }
-
-    footer #redes nav ul {
-        list-style: none;
-    }
-
-    footer #redes nav ul li {
-        display: inline-block;
-        margin-left: 10px;
-    }
-
-    footer #redes nav ul li a img {
-        width: 32px;
-        height: 32px;
+        right: 150px;
+        border-radius: 2;
     }
 }
 
 
 
+
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 992px) {
+    header {
+        background-position: 0px 0px;
+        background-repeat: no-repeat;
+    }
+
+    #superior nav {
+        background-color: var(--background-dark-blue);
+        position: fixed;
+        right: -210px;
+        top: 0px;
+        z-index: 10000;
+        width: 200px;
+        height: 100vh;
+        text-align: left;
+        padding-top: 100px;
+        padding-left: 20px;
+        transition: ease 0.5s;
+    }
+
+    #superior nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    #superior nav ul li a {
+        color: var(--white);
+        font-size: 14pt;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    h1 {
+        font-family: "lato";
+        font-size: 50pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        z-index: 10000;
+    }
+
     #imagem {
         display: flex;
-        width: 200px;
-        height: 200px;
-        top: -40px;
-        left: 40px;
+        width: 150px;
+        height: 150px;
+        top: -30px;
+        left: -10px;
         z-index: 10000;
         position: absolute;
     }
+
+    .abrirmenu {
+        display: block;
+        width: 40px;
+        font-size: 35pt;
+        font-weight: bold;
+        position: fixed;
+        right: 40px;
+        top: 0px;
+        z-index: 1000;
+    }
+
+    .fecharmenu {
+        display: block;
+        width: 30px;
+        height: 30px;
+        font-size: 20pt;
+        font-weight: bold;
+        padding: 10px;
+        text-align: center;
+        position: absolute;
+        top: 0px;
+        right: 150px;
+        /* Alterado para o lado direito */
+        border-radius: 2;
+    }
+
 }
 
 

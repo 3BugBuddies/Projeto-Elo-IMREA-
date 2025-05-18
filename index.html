@@ -18,13 +18,14 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
+
   <body>
-    <header> 
+    <header>
       <div id="cabecalho">
         <a href="#" class="abrirmenu" onclick="abrir();"> &equiv; </a>
 
         <div id="superior">
-         <div id="imagem">
+          <div id="imagem">
             <img src="img/Elo-Logotipo.png" alt="logotipo-do-elo-imrea" />
           </div>
 
@@ -35,15 +36,13 @@
               <li><a href="agendas.html">Agendas</a></li>
               <li><a href="quemsomos.html">Quem somos</a></li>
               <li><a href="tutorial.html">Tutorial</a></li>
-              <li><a href="contato.html">Info e contato</a></li>
+              <li><a href="infoecontato.html">Info e contato</a></li>
             </ul>
           </nav>
         </div>
       </div>
     </header>
-    <main>
-     
-    </main>
+    <main></main>
     <footer>
       <div id="direitos">
         <h3>ELO IMREA</h3>
@@ -70,14 +69,6 @@
       </div>
     </footer>
 
-    <script>
-      function abrir() {
-        document.getElementsByTagName("nav")[0].style.left = "0px";
-      }
-
-      function fechar() {
-        document.getElementsByTagName("nav")[0].style.left = "-210px";
-      }
-    </script>
+    <script src="script/menu.js"></script>
   </body>
 </html>
