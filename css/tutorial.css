@@ -1,0 +1,163 @@
+.step-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 40px;
+  align-items: center;
+  justify-items: center;
+  padding: 2rem;
+}
+
+ /* <!-- //------------testando a camera e microfone---------------- --> */
+
+ .step-button-screen {
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex-direction: column-reverse;
+}
+
+.step-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  padding: 2rem;
+  min-height: 400px;
+}
+
+/* Camera preview */
+#camera-container {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-color: #f0f0f0;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  position: relative;
+}
+
+#camera-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#no-camera-message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+}
+
+
+
+.step-instructions {
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.step-instructions ol {
+  list-style: none;
+  counter-reset: step;
+}
+
+.step-instructions ol li {
+  position: relative;
+  /* Necessário para posicionar o círculo */
+  padding-left: 40px;
+  /* Espaço para o círculo */
+  margin-bottom: 20px;
+  /* Espaçamento entre os passos */
+  font-size: 16px;
+}
+
+.step-instructions ol li::before {
+  content: counter(step);
+  counter-increment: step;
+  /* Incrementa o contador */
+  position: absolute;
+  left: 0;
+  /* Posiciona no lado esquerdo */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: #5ca9f0;
+  /* Cor azul */
+  color: white;
+  border-radius: 50%;
+  /* Torna o elemento redondo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-direction: column;
+}
+
+.controls button {
+  flex: 1;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.controls #test-camera {
+  background-color: #e0e7ff;
+  color: #333;
+}
+
+.controls #test-microphone {
+  background-color: #5a5cc8;
+}
+
+/* =============== Área dos breakpoints de responsividade ==================== */
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 0px) and (max-width: 576px) {
+
+  .step-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    flex-direction: column-reverse;
+    margin: auto;
+  }
+
+
+
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 992px) {
+  .step-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    flex-direction: column-reverse;
+
+  }
+
+  .step-image {
+    width: 100%;
+    height: auto;
+  }
+}
