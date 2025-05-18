@@ -1,41 +1,72 @@
-.step-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin: 40px;
-  align-items: center;
-  justify-items: center;
-  padding: 2rem;
+:root {
+  --primary: #2563eb;
+  --primary-light: #3b82f6;
+  --primary-dark: #1e40af;
+  --secondary: #64748b;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --text: #1e293b;
+  --text-light: #64748b;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+
+  --body-font: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  --heading-font: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+
+  --border-radius-sm: 0.25rem;
+  --border-radius: 0.5rem;
+  --border-radius-lg: 0.75rem;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  --transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
- /* <!-- //------------testando a camera e microfone---------------- --> */
 
- .step-button-screen {
-  padding: 1rem;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  flex-direction: column-reverse;
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-4);
 }
 
-.step-image {
+
+.camera-section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  padding: 2rem;
-  min-height: 400px;
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
 }
 
-/* Camera preview */
-#camera-container {
-  width: 100%;
-  aspect-ratio: 16/9;
-  background-color: #f0f0f0;
-  border-radius: var(--border-radius-md);
-  overflow: hidden;
+.camera-container {
   position: relative;
+  width: 100%;
+  background-color: #f1f5f9;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  aspect-ratio: 16/9;
 }
 
 #camera-preview {
@@ -44,120 +75,222 @@
   object-fit: cover;
 }
 
-#no-camera-message {
+.camera-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background-color: rgba(15, 23, 42, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+}
+
+.camera-message {
+  text-align: center;
+  color: var(--surface);
+}
+
+.controls-section {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.1);
-  color: var(--text-color);
+  gap: var(--space-4);
 }
 
-
-
-.step-instructions {
-  padding: 1rem;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.step-instructions ol {
-  list-style: none;
-  counter-reset: step;
-}
-
-.step-instructions ol li {
-  position: relative;
-  /* Necessário para posicionar o círculo */
-  padding-left: 40px;
-  /* Espaço para o círculo */
-  margin-bottom: 20px;
-  /* Espaçamento entre os passos */
-  font-size: 16px;
-}
-
-.step-instructions ol li::before {
-  content: counter(step);
-  counter-increment: step;
-  /* Incrementa o contador */
-  position: absolute;
-  left: 0;
-  /* Posiciona no lado esquerdo */
-  top: 50%;
-  transform: translateY(-50%);
-  width: 30px;
-  height: 30px;
-  background-color: #5ca9f0;
-  /* Cor azul */
-  color: white;
-  border-radius: 50%;
-  /* Torna o elemento redondo */
+.device-status {
   display: flex;
-  justify-content: center;
+  gap: var(--space-6);
+}
+
+.status-indicator {
+  display: flex;
   align-items: center;
-  font-weight: bold;
-  font-size: 14px;
+  gap: var(--space-2);
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--error);
+  transition: background-color var(--transition);
+}
+
+.status-dot.active {
+  background-color: var(--success);
 }
 
 .controls {
   display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
+  flex-wrap: wrap;
+  gap: var(--space-3);
   flex-direction: column;
 }
 
-.controls button {
-  flex: 1;
-  padding: 0.8rem 1.2rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
+.btn {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--border-radius);
+  font-weight: 500;
   cursor: pointer;
-  color: #fff;
+  transition: all var(--transition);
+  border: none;
+  box-shadow: var(--shadow-sm);
 }
 
-.controls #test-camera {
-  background-color: #e0e7ff;
-  color: #333;
+.btn.primary {
+  background-color: var(--primary);
+  color: white;
 }
 
-.controls #test-microphone {
-  background-color: #5a5cc8;
+.btn.secondary {
+  background-color: white;
+  color: var(--text);
+  border: 1px solid #e2e8f0;
 }
 
-/* =============== Área dos breakpoints de responsividade ==================== */
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 0px) and (max-width: 576px) {
+.btn.active {
+  background-color: var(--primary);
+  color: white;
+}
 
-  .step-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    flex-direction: column-reverse;
-    margin: auto;
+.microphone-level {
+  margin-top: var(--space-4);
+}
+
+.mic-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-light);
+  margin-bottom: var(--space-2);
+}
+
+.mic-meter {
+  height: 12px;
+  background-color: #e2e8f0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.mic-meter-fill {
+  height: 100%;
+  width: 0%;
+  background-color: var(--primary);
+  border-radius: 6px;
+  transition: width 100ms ease-out;
+}
+
+.feedback-message {
+  margin-top: var(--space-4);
+  padding: var(--space-3);
+  border-radius: var(--border-radius);
+  background-color: var(--error);
+  color: var(--text);
+  font-size: var(--font-size-xl);
+  text-align: center;
+}
+
+.feedback-message.active {
+  margin-top: var(--space-4);
+  padding: var(--space-3);
+  border-radius: var(--border-radius);
+  background-color: var(--success);
+  color: var(--text);
+  font-size: var(--font-size-xl);
+  text-align: center;
+}
+
+.instructions {
+  background-color: var(--surface);
+  border-radius: var(--border-radius);
+  padding: var(--space-6);
+  box-shadow: var(--shadow);
+}
+
+.instructions ol {
+  padding-left: var(--space-6);
+}
+
+.instructions li {
+  margin-bottom: var(--space-3);
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (min-width: 766px) {
+  .camera-section {
+    flex-direction: row;
+    align-items: flex-start;
   }
 
-
-
-
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 992px) {
-  .step-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    flex-direction: column-reverse;
-
+  .camera-container {
+    flex: 3;
   }
 
-  .step-image {
+  .device-status {
+    flex: 2;
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+  }
+
+  .controls-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    flex-direction: row;
+    justify-content: space-between;
     width: 100%;
-    height: auto;
   }
+
+  .btn {
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition);
+    border: none;
+    box-shadow: var(--shadow-sm);
+    font-size: var(--font-size-sm);
+    width: 46%;
+  }
+
+
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: var(--space-8);
+  }
+
+  .camera-section {
+    gap: var(--space-8);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.mic-active .mic-meter-fill {
+  animation: pulse 1.5s infinite;
 }
