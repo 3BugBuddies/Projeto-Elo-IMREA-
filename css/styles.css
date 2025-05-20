@@ -158,12 +158,10 @@ header {
 #superior nav ul li {
   display: inline-block;
   padding: 10px 10px;
-  transition: ease 0.5s;
 }
 
 #superior nav ul li:hover {
   background-color: magenta;
-  /* transform: scale(1.5); */
 }
 
 #superior nav ul li a {
@@ -191,10 +189,22 @@ header {
 footer {
   background-color: #f7f7f7;
   display: flex;
+  flex-direction: column;
+}
+
+footer #logo-links {
+  display: flex;
   flex-direction: row;
-  padding: 30px;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+
+  margin-top: 2rem;
+}
+
+#logo-links nav ul {
+  list-style: none;
 }
 
 footer #direitos {
@@ -202,14 +212,55 @@ footer #direitos {
   color: var(--text-color);
   font-family: var(--body-font);
   font-size: var(--small-font-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem !important;
+}
+
+footer #logo-sugestao-azul {
+  width: 150px;
+  height: 150px;
+}
+
+#footer-links nav {
+  flex: 2;
+  text-align: center;
+  padding-top: 25px;
+}
+
+#footer-links nav ul {
+  list-style: none;
+}
+
+#footer-links nav ul li {
+  display: inline-block;
+  padding: 10px 10px;
+}
+
+#superior nav ul li:hover {
+  background-color: magenta;
+}
+
+#footer-links nav ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-family: var(--body-font);
+  font-size: var(--base-font-size);
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 footer #redes {
   flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
 }
 
 footer #redes nav {
-  text-align: right;
+  text-align: center;
 }
 
 footer #redes nav ul {
@@ -218,12 +269,11 @@ footer #redes nav ul {
 
 footer #redes nav ul li {
   display: inline-block;
-  margin-left: 10px;
 }
 
 footer #redes nav ul li a img {
-  width: 32px;
-  height: 32px;
+  width: 3rem;
+  height: 3rem;
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -304,16 +354,13 @@ footer #redes nav ul li a img {
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-}
+@media (min-width: 992px) {}
 
 /* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-}
+@media (min-width: 1200px) {}
 
 /* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-}
+@media (min-width: 1400px) {}
 
 /* =============== Área dos breakpoints de responsividade ==================== */
 /* Small devices (landscape phones, 576px and up) */
@@ -394,41 +441,93 @@ footer #redes nav ul li a img {
   }
 
   /* //-----------FOOTER-celulares------------------ */
-  footer {
-    background-color: #f7f7f7;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    padding-bottom: none !important;
-  }
-
-  footer #direitos {
-    flex: 1;
-    color: var(--text-color);
-    font-family: var(--body-font);
-    font-size: var(--small-font-size);
-    text-align: center;
-  }
-
-  footer #redes {
-    flex: 1;
-  }
-
-  footer #redes nav {
-    text-align: right;
-  }
-
-  footer #redes nav ul {
-    list-style: none;
-  }
-
-  footer #redes nav ul li {
-    display: inline-block;
-    margin-left: 10px;
-  }
-
-  footer #redes nav ul li a img {
-    width: 32px;
-    height: 32px;
-  }
+ footer {
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
 }
+
+footer #logo-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+#logo-links nav ul {
+  list-style: none;
+}
+
+footer #direitos {
+  flex: 1;
+  color: var(--text-color);
+  font-family: var(--body-font);
+  font-size: var(--x-small-font-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem !important;
+}
+
+footer #logo-sugestao-azul {
+  width: 150px;
+  height: 150px;
+}
+
+#footer-links nav {
+  flex: 2;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+#footer-links nav ul {
+  list-style: none;
+}
+
+#footer-links nav ul li {
+  display: inline-block;
+ 
+}
+
+#superior nav ul li:hover {
+  background-color: magenta;
+}
+
+#footer-links nav ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-family: var(--body-font);
+  font-size: var(--small-font-size);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+footer #redes {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+footer #redes nav {
+  text-align: center;
+}
+
+footer #redes nav ul {
+  list-style: none;
+}
+
+footer #redes nav ul li {
+  display: inline-block;
+}
+
+footer #redes nav ul li a img {
+  width: 2rem;
+  height: 2rem;
+}
+
+}
+
