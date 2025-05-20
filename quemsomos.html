@@ -1,74 +1,152 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Elo IMREA</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@100&family=Courgette&family=Gloria+Hallelujah&family=Lobster&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <body>
-    <header>
-      <div id="cabecalho">
-        <a href="#" class="abrirmenu" onclick="abrir();"> &equiv; </a>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elo IMREA</title>
 
-        <div id="superior">
-          <div id="imagem">
-            <img src="img/Elo-Logotipo.png" alt="logotipo-do-elo-imrea" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@100&family=Courgette&family=Gloria+Hallelujah&family=Lobster&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/quem-somos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <header>
+    <div id="cabecalho">
+      <a href="#" class="abrirmenu" onclick="abrir();"> &equiv; </a>
+
+      <div id="superior">
+        <div id="imagem">
+          <img src="img/Elo-Logotipo.png" alt="logotipo-do-elo-imrea" />
+        </div>
+
+        <nav>
+          <a href="#" class="fecharmenu" onclick="fechar();"> &times; </a>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="agendas.html">Agendas</a></li>
+            <li><a href="quemsomos.html">Quem somos</a></li>
+            <li><a href="tutorial.html">Tutorial</a></li>
+            <li><a href="infoecontato.html">Info e contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- Team Section -->
+    <section class="team-section">
+      <div class="container">
+        <div class="section-header center">
+          <h2>Nosso Time</h2>
+          <p>Pessoas que fazem as coisas acontecerem</p>
+        </div>
+        <div class="team-grid">
+          <div class="team-card reveal">
+            <div class="team-image">
+              <img src="img/mari.jpg" alt="Mari" height="auto" width="200">
+            </div>
+            <div class="team-info">
+              <h3>Mari Inoue</h3>
+              <p class="team-position">Leader - Front End</p>
+              <p class="team-bio">Possui paixão por desenvolver interfaces elegantes e intuitivas, criando experiências visuais atraentes e funcionais para os usuários.</p>
+              <div class="team-social">
+                <a href="#" aria-label="Linkedin"><i class="fa-brands fa-linkedin-in"></i></i></a>
+                <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" aria-label="Intagram"><i class="fa-brands fa-instagram"></i></a>
+
+              </div>
+            </div>
           </div>
+          <div class="team-card reveal">
+            <div class="team-image">
+              <img src="img/mari.jpg" alt="Gio" height="auto" width="200">
+            </div>
+            <div class="team-info">
+              <h3>Gio Neri</h3>
+              <p class="team-position">Dev FullStack</p>
+              <p class="team-bio">Tem como foco o design e a gestão de bancos de dados, garantindo a integridade, organização e acesso eficiente às informações.</p>
+              <div class="team-social">
+                <a href="#" aria-label="Linkedin"><i class="fa-brands fa-linkedin-in"></i></i></a>
+                <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" aria-label="Intagram"><i class="fa-brands fa-instagram"></i></a>
 
-          <nav>
-            <a href="#" class="fecharmenu" onclick="fechar();"> &times; </a>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="agendas.html">Agendas</a></li>
-              <li><a href="quemsomos.html">Quem somos</a></li>
-              <li><a href="tutorial.html">Tutorial</a></li>
-              <li><a href="infoecontato.html">Info e contato</a></li>
-            </ul>
-          </nav>
+              </div>
+            </div>
+          </div>
+          <div class="team-card reveal">
+            <div class="team-image">
+              <img src="img/mari.jpg" alt="Gabriel" height="auto" width="200">
+            </div>
+            <div class="team-info">
+              <h3>Gabriel Peixoto</h3>
+              <p class="team-position">PM e Back End</p>
+              <p class="team-bio">É apaixonado por projetar soluções robustas e eficientes, criando a lógica e as estruturas que dão suporte a sistemas complexos.</p>
+              <div class="team-social">
+                <a href="#" aria-label="Linkedin"><i class="fa-brands fa-linkedin-in"></i></i></a>
+                <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" aria-label="Intagram"><i class="fa-brands fa-instagram"></i></a>
+
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </header>
-    <main></main>
-    <footer>
-      <div id="direitos">
-        <h3>ELO IMREA</h3>
-        <p>&copy; 2025 Elo IMREA. Todos direitos reservados.</p>
-      </div>
-
-      <div id="redes">
+    </section>
+  </main>
+  <!-- ----------------FOOTER------------------ -->
+  <footer>
+    <div id="logo-links">
+      <div id="logo-sugestao-azul">
         <nav>
           <ul>
             <li>
-              <a
-                href="https://github.com/3BugBuddies/Projeto-Elo-IMREA-"
-                target="_blank"
-                ><img src="img/icon-github-logo.svg" alt="logotipo-do-github"
-              /></a>
-            </li>
-            <li>
-              <a href="https://www.youtube.com" target="_blank"
-                ><img src="img/youtube.svg" alt="facebook"
-              /></a>
+              <a href="index.html">
+                <img id="logo-sugestao-azul" src="img/logo-sugestao-azul.png" alt="logotipo-sugestao-azul" />
+              </a>
             </li>
           </ul>
         </nav>
       </div>
-    </footer>
 
-    <script src="script/menu.js"></script>
-  </body>
+      <div id="footer-links">
+        <nav>
+          <ul>
+            <li><a href="quemsomos.html">Quem somos</a></li>
+            <li><a href="tutorial.html">Tutorial</a></li>
+            <li><a href="infoecontato.html">Info e contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div id="redes">
+      <nav>
+        <ul>
+          <li>
+            <a href="https://github.com/3BugBuddies/Projeto-Elo-IMREA-" target="_blank"><img
+                src="img/icon-github-logo.svg" alt="logotipo-do-github" /></a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com" target="_blank"><img src="img/youtube.svg" alt="facebook" /></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div id="direitos">
+      <p>&copy; 2025 Elo IMREA. Todos direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script/menu.js"></script>
+</body>
+
 </html>
