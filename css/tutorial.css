@@ -1,69 +1,22 @@
-:root {
-  --primary: #2563eb;
-  --primary-light: #3b82f6;
-  --primary-dark: #1e40af;
-  --secondary: #64748b;
-  --success: #10b981;
-  --warning: #f59e0b;
-  --error: #ef4444;
-  --background: #f8fafc;
-  --surface: #ffffff;
-  --text: #1e293b;
-  --text-light: #64748b;
-
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
-  --space-12: 3rem;
-
-  --body-font: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
-  --heading-font: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
-  --font-size-sm: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.25rem;
-  --font-size-2xl: 1.5rem;
-
-  --border-radius-sm: 0.25rem;
-  --border-radius: 0.5rem;
-  --border-radius-lg: 0.75rem;
-
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-
-  --transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-
-
-
 .container {
-  max-width: 1200px;
+  max-width: 75rem;
   margin: 0 auto;
-  padding: var(--space-4);
+  padding: var(--spacing-4);
 }
 
 
 .camera-section {
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
-  margin-bottom: var(--space-8);
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-8);
 }
 
 .camera-container {
   position: relative;
   width: 100%;
   background-color: #f1f5f9;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-sm);
   overflow: hidden;
   box-shadow: var(--shadow);
   aspect-ratio: 16/9;
@@ -85,53 +38,53 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-4);
+  padding: var(--spacing-4);
 }
 
 .camera-message {
   text-align: center;
-  color: var(--surface);
+  color: var(--color-background);
 }
 
 .controls-section {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--spacing-4);
 }
 
 .device-status {
   display: flex;
-  gap: var(--space-6);
+  gap: var(--spacing-6);
 }
 
 .status-indicator {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--spacing-2);
 }
 
 .status-dot {
-  width: 12px;
-  height: 12px;
+  width: 0.75rem;
+  height: 0.75rem;
   border-radius: 50%;
-  background-color: var(--error);
+  background-color: var(--error-color);
   transition: background-color var(--transition);
 }
 
 .status-dot.active {
-  background-color: var(--success);
+  background-color: var(--success-color);
 }
 
 .controls {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-3);
+  gap: var(--spacing-3);
   flex-direction: column;
 }
 
 .btn {
-  padding: var(--space-3) var(--space-4);
-  border-radius: var(--border-radius);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--border-radius-sm);
   font-weight: 500;
   cursor: pointer;
   transition: all var(--transition);
@@ -140,79 +93,79 @@
 }
 
 .btn.primary {
-  background-color: var(--primary);
+  background-color: var(--primary-color);
   color: white;
 }
 
 .btn.secondary {
   background-color: white;
   color: var(--text);
-  border: 1px solid #e2e8f0;
+  border: 0.0625rem solid #e2e8f0;
 }
 
 .btn.active {
-  background-color: var(--primary);
+  background-color: var(--primary-color);
   color: white;
 }
 
 .microphone-level {
-  margin-top: var(--space-4);
+  margin-top: var(--spacing-4);
 }
 
 .mic-label {
   font-size: var(--font-size-sm);
   color: var(--text-light);
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--spacing-2);
 }
 
 .mic-meter {
-  height: 12px;
+  height: 0.75rem;
   background-color: #e2e8f0;
-  border-radius: 6px;
+  border-radius: 0.375rem;
   overflow: hidden;
 }
 
 .mic-meter-fill {
   height: 100%;
   width: 0%;
-  background-color: var(--primary);
-  border-radius: 6px;
+  background-color: var(--primary-color);
+  border-radius: 0.375rem;
   transition: width 100ms ease-out;
 }
 
 .feedback-message {
-  margin-top: var(--space-4);
-  padding: var(--space-3);
-  border-radius: var(--border-radius);
-  background-color: var(--error);
-  color: var(--text);
+  margin-top: var(--spacing-4);
+  padding: var(--spacing-3);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--error-color);
+  color: #1e293b;
   font-size: var(--font-size-xl);
   text-align: center;
 }
 
 .feedback-message.active {
-  margin-top: var(--space-4);
-  padding: var(--space-3);
-  border-radius: var(--border-radius);
-  background-color: var(--success);
-  color: var(--text);
+  margin-top: var(--spacing-4);
+  padding: var(--spacing-3);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--success-color);
+  color: #1e293b;
   font-size: var(--font-size-xl);
   text-align: center;
 }
 
 .instructions {
-  background-color: var(--surface);
-  border-radius: var(--border-radius);
-  padding: var(--space-6);
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-6);
   box-shadow: var(--shadow);
 }
 
 .instructions ol {
-  padding-left: var(--space-6);
+  padding-left: var(--spacing-6);
 }
 
 .instructions li {
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--spacing-3);
 }
 
 .hidden {
@@ -246,15 +199,15 @@
   .controls {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-3);
+    gap: var(--spacing-3);
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
   }
 
   .btn {
-    padding: var(--space-3) var(--space-4);
-    border-radius: var(--border-radius);
+    padding: var(--spacing-3) var(--spacing-4);
+    border-radius: var(--border-radius-sm);
     font-weight: 500;
     cursor: pointer;
     transition: all var(--transition);
@@ -269,11 +222,11 @@
 
 @media (min-width: 1024px) {
   .container {
-    padding: var(--space-8);
+    padding: var(--spacing-8);
   }
 
   .camera-section {
-    gap: var(--space-8);
+    gap: var(--spacing-8);
   }
 }
 
