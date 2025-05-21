@@ -1,35 +1,7 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const testSetupButton = document.getElementById('test-setup-btn');
-
-    if (testSetupButton) {
-        testSetupButton.addEventListener('click', function() {
-            alert('This would ideally open a camera/microphone test interface.');
-            // In a real implementation, this would trigger a function
-            // to access the user's media devices and display a preview.
-        });
-    }
-});
-
-// In a real application, you would use the getUserMedia API
-// to access the camera and microphone. This is a simplified example.
-async function testCameraAndMicrophone() {
-    try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
-        // Handle the stream (e.g., display a preview)
-        console.log('Camera and microphone access granted:', stream);
-        // You would then display the video stream in a video element
-        // and potentially provide feedback on the audio level.
-    } catch (error) {
-        console.error('Error accessing camera and microphone:', error);
-        alert('Please ensure you have granted camera and microphone permissions in your browser settings.');
-    }
-}
-
-// If you wanted to trigger the test on button click:
-// testSetupButton.addEventListener('click', testCameraAndMicrophone);
-
+//validar os dados inseridos em um formulário de contato
 function validateForm() {
-    let isValid = true;
+    let isValid = true; //variável boolean
+    // Objeto para armazenar mensagens de erro
     const errors = {
         name: '',
         email: '',
@@ -38,24 +10,25 @@ function validateForm() {
         message: ''
     };
 
-    // Name validation
-    const name = document.getElementById('name').value.trim();
+    // Nome validacao
+    const name = document.getElementById('name').value.trim();//trim remove espaços em branco extras do início e do fim
     if (!name) {
         errors.name = 'Por favor, insira o seu nome.';
         isValid = false;
     }
 
-    // Email validation
+    // Email validacao
     const email = document.getElementById('email').value.trim();
     if (!email) {
         errors.email = 'Por favor, insira um email válido.';
         isValid = false;
+    //regex para validar o formato do email
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         errors.email = 'Please enter a valid email address';
         isValid = false;
     }
 
-    // Phone validation
+    // Fone validacao
     const phone = document.getElementById('phone').value.trim();
     if (!phone) {
         errors.phone = 'Por favor, insira o seu número de telefone.';
@@ -65,14 +38,14 @@ function validateForm() {
         isValid = false;
     }
 
-    // Subject validation
+    // Assunto validacao
     const subject = document.getElementById('subject').value.trim();
     if (!subject) {
         errors.subject = 'Por favor, insira o tema do assunto.';
         isValid = false;
     }
 
-    // Message validation
+    // Messagem validacao
     const message = document.getElementById('message').value.trim();
     if (!message) {
         errors.message = 'Por favor, insira a sua mensagem.';
@@ -82,7 +55,7 @@ function validateForm() {
         isValid = false;
     }
 
-    // Display errors
+    // Itera sobre cada campo no objeto de erros e atualiza a exibição
     Object.keys(errors).forEach(field => {
         const errorElement = document.getElementById(`${field}Error`);
         const inputElement = document.getElementById(field);
@@ -104,16 +77,26 @@ function validateForm() {
 
 function handleSubmit(event) {
     event.preventDefault();
-    
+
     if (validateForm()) {
         const submitButton = event.target.querySelector('button[type="submit"]');
         const buttonText = submitButton.querySelector('.button-text');
-        
+
+        // Acessa os valores dos inputs individualmente
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        console.log('Valores do formulário:');
+        console.log('Nome:', name);
+        console.log('Email:', email);
+        console.log('Mensagem:', message);
+
         // Disable button and show loading state
         submitButton.disabled = true;
         buttonText.textContent = 'Sending...';
         submitButton.setAttribute('aria-label', 'enviando sua mensagem...');
-        
+
         // Simulate form submission
         setTimeout(() => {
             const successMessage = document.getElementById('successMessage');
@@ -122,8 +105,8 @@ function handleSubmit(event) {
             buttonText.textContent = 'Send Message';
             submitButton.setAttribute('aria-label', 'submeter sua mensagem');
             event.target.reset();
-            
-            // Set focus to the success message for screen readers
+
+            // Set focus to para a mensagem de sucesso para leitores de tela
             successMessage.querySelector('button').focus();
         }, 1500);
     }
