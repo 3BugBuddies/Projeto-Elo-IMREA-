@@ -62,9 +62,9 @@ Projeto-Elo-IMREA-
 
 ## Integrantes
 
-* **Mariana Inoue** RM - 565834: Leader
-* **Giovanna Neri** RM - 566154: Dev FullStack
-* **Gabriel Nogueira** RM - 563925 : Product Maneger
+* **Mariana Inoue** RM - 565834
+* **Giovanna Neri** RM - 566154
+* **Gabriel Nogueira** RM - 563925
 
 ## Endereço Repositório do Projeto no GITHUB
 
